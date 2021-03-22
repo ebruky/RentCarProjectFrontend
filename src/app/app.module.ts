@@ -10,6 +10,7 @@ import { RentalComponent } from 'src/components/rental/rental.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CarDetailComponent } from 'src/components/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     RentalComponent,
     CustomerComponent,
     ColorComponent,
+    CarDetailComponent,
     NaviComponent
 ],
   imports: [

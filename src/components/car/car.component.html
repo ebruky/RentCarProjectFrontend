@@ -1,21 +1,17 @@
-<table class="table table-success table-striped">
-    <thead >
-      <tr>
-        
-        <th>Açıklama</th>
-        <th>Marka</th>
-        <th>Günlük Fiyat</th>
-        <th>Renk</th>
-        
-      </tr>
-    </thead>
-  
-    <tr *ngFor="let car of cars">
-      <td>{{ car.description }}</td>
-      <td>{{ car.brandName }}</td>
-      <td>{{ car.dailyPrice }}</td>
-      <td>{{ car.colorName }}</td>
-      
-      
-    </tr>
-  </table>
+
+
+  <div class="container col-md-10">
+    <div class="row"   >
+  <div class="example-card mt-3 me-md-3 " style="width: 18rem;" *ngFor="let car of cars" >
+    <img [src]="url+car.imagePath" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ car.description }}</h5>
+      <p class="card-text">Marka : {{ car.brandName }}</p>
+      <p class="card-text">Günlük Fiyat : {{ car.dailyPrice }}</p>
+      <p class="card-text">Renk : {{ car.colorName }}</p>
+      <button type="button" routerLink = "/cars/detail/{{ car.id }}"  class="btn btn-primary">Detay</button>
+    </div>
+  </div> 
+  <div  *ngIf="empty" > <h2 class="mt-4">Filtreye Uygun Araç Bulunamadı</h2></div> </div>
+ 
+  </div>

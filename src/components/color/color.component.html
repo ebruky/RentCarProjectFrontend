@@ -1,17 +1,10 @@
-
-  <table class="table table-secondary table-striped">
-    <thead >
-      <tr>
-        
-        <th>Renk ID</th>
-        <th>Renk Adı</th>
-        
-      </tr>
-    </thead>
+<ul class="list-group">
+ 
+    <li (click)="setCurrentColor(color)"
+    routerLink = "/cars/color/{{color.colorId}}"
+    *ngFor="let color of colors" 
+    [class]="getCurrentColorClass(color)">
+    {{ color.colorName}}</li>
+  </ul>
   
-    <tr *ngFor="let color of colors">
-      <td>{{ color.colorId }}</td>
-      <td>{{ color.colorName }}</td>
-      
-    </tr>
-  </table>
+  <h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5>
