@@ -20,8 +20,8 @@ import { CarDetailComponent } from 'src/components/car-detail/car-detail.compone
     RentalComponent,
     CustomerComponent,
     ColorComponent,
-    CarDetailComponent,
-    NaviComponent
+    NaviComponent,
+    CarDetailComponent
 ],
   imports: [
     BrowserModule,
