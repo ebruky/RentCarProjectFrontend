@@ -12,6 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarDetailComponent } from 'src/components/car-detail/car-detail.component';
 
+import { FormsModule } from '@angular/forms';
+import { CarPipePipe } from './pipes/car-pipe.pipe';
+import { BrandPipePipe } from './pipes/brand-pipe.pipe';
+import { ColorPipePipe } from './pipes/color-pipe.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +26,16 @@ import { CarDetailComponent } from 'src/components/car-detail/car-detail.compone
     CustomerComponent,
     ColorComponent,
     NaviComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    
+    CarPipePipe,
+    BrandPipePipe,
+    ColorPipePipe
 ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

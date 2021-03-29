@@ -1,10 +1,23 @@
+<div class="mb-3">
+  <label for="brandText" class="form-label">Marka Ara</label>
+  <input
+    type="text"
+    [(ngModel)]="brandText"
+    class="form-control"
+    id="brandText"
+    placeholder="Aranacak marka ismini giriniz."
+  />
+</div>
+<div *ngIf="brandText.length > 1" class="alert alert-primary">
+  {{ brandText }} aradınız
+</div>
 
     
 <ul class="list-group">
  
   <li (click)="setCurrentBrand(brand)"
   routerLink = "/cars/brand/{{brand.brandId}}"
-  *ngFor="let brand of brands" 
+  *ngFor="let brand of brands | brandPipe: brandText" 
   [class]="getCurrentBrandClass(brand)">
   {{ brand.brandName}}</li>
 </ul>
