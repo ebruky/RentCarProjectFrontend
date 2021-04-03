@@ -29,9 +29,9 @@
         Kirala
       </button> -->
 
-      <button *ngIf="carControl == true" type="button"  class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#rentalModal">Kirala</button>
+     
       <button *ngIf="carControl == false" type="button" class="btn btn-secondary btn-lg" disabled>Araç Kirada</button>
     </div>
   </div>
-  
+  <app-rental-add *ngIf="carControl == true" [car]="car"></app-rental-add>
 </div>
