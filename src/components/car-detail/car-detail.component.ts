@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/models/car';
 import { CarImage } from 'src/models/carImage';
 import { CardetailService } from 'src/services/cardetail.service';
+import { RentalService } from 'src/services/rental.service';
 
 @Component({
   selector: 'app-car-detail',
@@ -12,18 +13,21 @@ import { CardetailService } from 'src/services/cardetail.service';
 export class CarDetailComponent implements OnInit {
   constructor(
     private cardetailService: CardetailService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private rentalService:RentalService
   ) {}
   car: Car;
   dataLoaded = false;
   carImages: CarImage[];
   description: string;
+  carControl=false
   url: string = 'https://localhost:44307';
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       if (params['carId']) {
         this.getCarsDetailByCarId(params['carId']);
+        this.checkCar(params['carId']);
       }
     });
   }
@@ -42,5 +46,8 @@ export class CarDetailComponent implements OnInit {
     } else {
       return 'carousel-item';
     }
+  }
+  checkCar(carId:number){
+    this.rentalService.checkCar(carId).subscribe((response) => {this.carControl=response.success });
   }
 }

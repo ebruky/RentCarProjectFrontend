@@ -1,5 +1,5 @@
-<div class="row">
-  <select class="col-md-3" [(ngModel)] = "currentColor.colorId" class="form-select">
+<div class="row" *ngIf="dataLoaded">
+  <select  class="col-md-3" [(ngModel)] = "currentColor.colorId" class="form-select">
     <option [selected]="setCurrentColor(c)" *ngFor="let c of colors" [value]="currentColor.colorId">
       {{ c.colorName }}
     </option>

@@ -19,9 +19,12 @@ export class CarComponent implements OnInit {
   colors: Color[] = [];
   url: string = 'https://localhost:44307';
   empty: boolean = false;
+  dataLoaded:boolean=false;
   carText: string = '';
-  currentBrand: Brand={brandId:0,brandName:""}
-  currentColor: Color={colorId:0,colorName:""}
+  currentBrand: Brand={brandId:6,brandName:""}
+ currentColor: Color={colorId:1003,colorName:""}
+  // currentBrand: Brand
+  // currentColor: Color
   //;
   constructor(
     private carService: CarService,
@@ -53,6 +56,7 @@ export class CarComponent implements OnInit {
   getCars() {
     this.carService.getCars().subscribe((response) => {
       this.cars = response.data;
+      this.dataLoaded=true;
     });
   }
 

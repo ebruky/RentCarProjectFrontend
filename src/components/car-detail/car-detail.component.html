@@ -25,9 +25,12 @@
       <p class="card-text">Marka : {{ car.brandName }}</p>
       <p class="card-text">Günlük Fiyat : {{ car.dailyPrice }}</p>
       <p class="card-text">Renk : {{ car.colorName }}</p>
-      <button type="button" routerLink="/cars" class="btn btn-success">
+      <!-- <button type="button" routerLink="/cars" class="btn btn-success">
         Kirala
-      </button>
+      </button> -->
+
+      <button *ngIf="carControl == true" type="button"  class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#rentalModal">Kirala</button>
+      <button *ngIf="carControl == false" type="button" class="btn btn-secondary btn-lg" disabled>Araç Kirada</button>
     </div>
   </div>
   
