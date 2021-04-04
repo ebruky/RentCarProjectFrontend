@@ -20,6 +20,7 @@ import { CarPipePipe } from './pipes/car-pipe.pipe';
 import { BrandPipePipe } from './pipes/brand-pipe.pipe';
 import { ColorPipePipe } from './pipes/color-pipe.pipe';
 import { RentalAddComponent } from 'src/components/rental-add/rental-add.component';
+import { PaymentComponent } from 'src/components/payment/payment.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { RentalAddComponent } from 'src/components/rental-add/rental-add.compone
     NaviComponent,
     CarDetailComponent,
     RentalAddComponent,
+    PaymentComponent,
     
     CarPipePipe,
     BrandPipePipe,

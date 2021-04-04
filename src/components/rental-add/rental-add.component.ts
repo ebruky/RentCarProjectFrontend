@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Rental } from 'src/models/rental';
 import { CustomerService } from 'src/services/customer.service';
 import { Customer } from 'src/models/customer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rental-add',
@@ -26,7 +27,8 @@ export class RentalAddComponent implements OnInit {
   rentDate:string | null;
   returnDate:string | null;
   customers:Customer[];
-  constructor(private formBuilder: FormBuilder,private rentalService:RentalService,private toastrService:ToastrService,private customerService:CustomerService) { }
+  constructor(private formBuilder: FormBuilder,private router:Router,
+    private rentalService:RentalService,private toastrService:ToastrService,private customerService:CustomerService) { }
 
   ngOnInit(): void {
     
@@ -51,9 +53,12 @@ getCustomers(){
   
         let rentalModel = Object.assign({}, this.rentalAddForm.value);
         this.checkDate(rentalModel)
-        this.rentalService.add(rentalModel).subscribe(response=>{
-        this.toastrService.success("Başarılı","Kiralama İşlemi Tamamlandı")}
-      )
+        this.calculatePayment(rentalModel)
+        this.router.navigate(['/payment',JSON.stringify(rentalModel)]);
+        this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz.','Ödeme İşlemleri')
+        //this.rentalService.add(rentalModel).subscribe(response=>{
+       // this.toastrService.success("Başarılı","Kiralama İşlemi Tamamlandı")}
+      
         
       
       }
@@ -62,7 +67,24 @@ getCustomers(){
       }
       
     }
-
+    calculatePayment(rental:Rental){
+    
+      if(rental.returnDate != null){
+        var returnDate = new Date(rental.returnDate.toString());
+        var rentDate = new Date(rental.rentDate.toString());
+        var difference = returnDate.getTime() - rentDate.getTime();
+  
+        var rentDays = Math.ceil(difference / (1000 * 3600 * 24));
+        
+        rental.totalPrice = rentDays * this.car.dailyPrice;
+  
+        
+        if(rental.totalPrice <= 0){
+          this.router.navigate(['/cars']);
+          this.toastrService.error('Ana sayfaya yönlendiriliyorsunuz','Hatalı işlem');
+        }
+      }
+    }
     checkDate(rentalModel:Rental){
       let rentDate = new Date(rentalModel.rentDate);
         let returnDate = new Date(rentalModel.returnDate);
