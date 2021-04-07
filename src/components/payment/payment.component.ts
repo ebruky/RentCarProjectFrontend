@@ -42,27 +42,6 @@ carId:number;
     });
   }
 
-
-//   calculatePayment(){
-    
-//     if(this.rental.returnDate != null){
-//       var returnDate = new Date(this.rental.returnDate.toString());
-//       var rentDate = new Date(this.rental.rentDate.toString());
-//       var difference = returnDate.getTime() - rentDate.getTime();
-
-//       var rentDays = Math.ceil(difference / (1000 * 3600 * 24));
-//       console.log(rentDays)
-// console.log(this.dailyPrice)
-//       this.totalPrice = rentDays * this.dailyPrice;
-
-//       console.log(this.totalPrice)
-      
-//       if(this.totalPrice <= 0){
-//         this.router.navigate(['/cars']);
-//         this.toastrService.error('Ana sayfaya yönlendiriliyorsunuz','Hatalı işlem');
-//       }
-//     }
-//   }
   rentACar(){
         this.rentalService.add(this.rental).subscribe(response=>{
        this.toastrService.success("Başarılı","Kiralama İşlemi Tamamlandı")})

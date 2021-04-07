@@ -13,12 +13,14 @@
 </div>
 
 <ul class="list-group">
- 
+<div  *ngFor="let color of colors | colorPipe: colorText"  class="=row">
+  
     <li (click)="setCurrentColor(color)"
     routerLink = "/cars/color/{{color.colorId}}"
-    *ngFor="let color of colors | colorPipe: colorText" 
+   
     [class]="getCurrentColorClass(color)">
-    {{ color.colorName}}</li>
+    {{ color.colorName}} </li>
+   <li> <span class="col-md-3"  routerLink="/color-update/{{ color.colorId }}" class="badge rounded-pill bg-danger">Güncelle</span> </li></div>
   </ul>
   
   <h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { BrandPipePipe } from 'src/app/pipes/brand-pipe.pipe';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Brand } from 'src/models/brand';
 import { Car } from 'src/models/car';
+import { CarModel } from 'src/models/carModel';
 import { Color } from 'src/models/color';
 import { BrandService } from 'src/services/brand.service';
 import { CarService } from 'src/services/car.service';
@@ -20,12 +20,13 @@ export class CarComponent implements OnInit {
   url: string = 'https://localhost:44307';
   empty: boolean = false;
   dataLoaded:boolean=false;
+  carModel:CarModel
   carText: string = '';
-  currentBrand: Brand={brandId:6,brandName:""}
- currentColor: Color={colorId:1003,colorName:""}
-  // currentBrand: Brand
-  // currentColor: Color
-  //;
+ currentBrand: Brand={brandId:8,brandName:""}
+ currentColor: Color={colorId:3003,colorName:""}
+//  currentBrand: Brand
+//  currentColor: Color
+  
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
@@ -51,6 +52,7 @@ export class CarComponent implements OnInit {
     });
     this.getBrands();
     this.getColors();
+
     
   }
   getCars() {

@@ -31,6 +31,37 @@
 
      
       <button *ngIf="carControl == false" type="button" class="btn btn-secondary btn-lg" disabled>Araç Kirada</button>
+      <!-- <div class="card-body">
+        <form [formGroup]="carImageAddForm">
+          <div class="mb-3">
+            <label for="carId">Araç Id</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="carId"
+                formControlName="carId"
+                placeholder="{{carid}}"
+                class="form-control"
+                readonly
+              />
+            </div> -->
+            <div class="mb-3">
+              <label class="image-upload-container btn btn-bwm">
+                  <span>Resim Seçiniz</span>
+                  <input #imageInput
+                         type="file"
+                         accept="image/*"
+                         (change)="processFile(imageInput)"
+
+                  >
+                </label>
+                 </div>
+
+          <!-- </div>  -->
+        <!-- </form>
+        </div> -->
+
+      
     </div>
   </div>
   <app-rental-add *ngIf="carControl == true" [car]="car"></app-rental-add>

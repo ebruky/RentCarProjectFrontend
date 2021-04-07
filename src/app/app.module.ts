@@ -21,6 +21,12 @@ import { BrandPipePipe } from './pipes/brand-pipe.pipe';
 import { ColorPipePipe } from './pipes/color-pipe.pipe';
 import { RentalAddComponent } from 'src/components/rental-add/rental-add.component';
 import { PaymentComponent } from 'src/components/payment/payment.component';
+import { BrandAddComponent } from 'src/components/brand-add/brand-add.component';
+import { CarAddComponent } from 'src/components/car-add/car-add.component';
+import { ColorAddComponent } from 'src/components/color-add/color-add.component';
+import { CarUpdateComponent } from 'src/components/car-update/car-update.component';
+import { BrandUpdateComponent } from 'src/components/brand-update/brand-update.component';
+import { ColorUpdateComponent } from 'src/components/color-update/color-update.component';
 
 
 @NgModule({
@@ -35,10 +41,15 @@ import { PaymentComponent } from 'src/components/payment/payment.component';
     CarDetailComponent,
     RentalAddComponent,
     PaymentComponent,
-    
+    BrandAddComponent,
+    CarAddComponent,
+    ColorAddComponent,
     CarPipePipe,
     BrandPipePipe,
-    ColorPipePipe
+    ColorPipePipe,
+    CarUpdateComponent,
+    BrandUpdateComponent,
+    ColorUpdateComponent
 ],
   imports: [
     BrowserModule,
