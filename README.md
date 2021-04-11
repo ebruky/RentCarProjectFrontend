@@ -11,6 +11,10 @@
 ![Adsız](https://user-images.githubusercontent.com/41199747/114317788-746dc680-9b12-11eb-91aa-aa6783873887.png)
 ![Adsız](https://user-images.githubusercontent.com/41199747/114317840-be56ac80-9b12-11eb-897f-fbde8d1440ff.png)
 
+--->Araca ait resim yoksa anasayfada görüldüğü üzere default resmi ile görüntülenecektir.
+![Adsız](https://user-images.githubusercontent.com/41199747/114320543-f4019280-9b1e-11eb-8c5b-f34e9fb287ab.png)
+
+
 --->Hem renk hem marka seçilerek çoklu filtreleme işlemi gerçekleştiriliyor.
 ![Adsız](https://user-images.githubusercontent.com/41199747/114317936-2c02d880-9b13-11eb-8cb5-50f1afbf1426.png)
 ![Adsız](https://user-images.githubusercontent.com/41199747/114317969-52c10f00-9b13-11eb-979f-ea0303401b0e.png)
