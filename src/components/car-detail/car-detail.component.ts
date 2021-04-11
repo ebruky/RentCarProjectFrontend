@@ -43,18 +43,14 @@ export class CarDetailComponent implements OnInit {
         
       }
     });
-    //this.createCarImageAddForm();
+    
   }
-    // createCarImageAddForm() {
-    // this.carImageAddForm = this.formBuilder.group({
-    //   carId: [this.carid, Validators.required]
-    // });}
+    
   getCarsDetailByCarId(carId: number) {
     this.cardetailService.getCarsDetailByCarId(carId).subscribe((response) => {
       this.car = response.data;
       this.dataLoaded = true;
       this.carid=carId
-      // this.carImages = response.data.carImages;
       console.log(response);
     });
   }
@@ -72,7 +68,6 @@ export class CarDetailComponent implements OnInit {
   }
 
   processFile(imageInput: any) {
-        //let carImageModel = Object.assign({}, this.carImageAddForm.value);
         this.carImage={carId:this.carid}
         const file: File = imageInput.files[0];
         const reader = new FileReader();

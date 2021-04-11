@@ -22,8 +22,8 @@ export class CarComponent implements OnInit {
   dataLoaded:boolean=false;
   carModel:CarModel
   carText: string = '';
- currentBrand: Brand={brandId:8,brandName:""}
- currentColor: Color={colorId:3003,colorName:""}
+ currentBrand: Brand={brandId:1007,brandName:""}
+ currentColor: Color={colorId:4002,colorName:""}
 //  currentBrand: Brand
 //  currentColor: Color
   

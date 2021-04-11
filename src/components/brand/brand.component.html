@@ -18,8 +18,8 @@
   <li (click)="setCurrentBrand(brand)"
   routerLink = "/cars/brand/{{brand.brandId}}"
  
-  [class]="getCurrentBrandClass(brand)"></li> 
-  {{ brand.brandName}}  <li><span class="col-md-3"  routerLink="/brand-update/{{ brand.brandId }}" class="badge rounded-pill bg-success">Güncelle</span></li></div></ul>
+  [class]="getCurrentBrandClass(brand)">{{ brand.brandName}}</li> 
+    <li><span class="col-md-3"  routerLink="/brand-update/{{ brand.brandId }}" class="badge rounded-pill bg-success">Güncelle</span></li></div></ul>
 
 
-<h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz</h5>
+

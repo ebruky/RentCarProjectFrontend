@@ -56,9 +56,7 @@ getCustomers(){
         this.calculatePayment(rentalModel)
         this.router.navigate(['/payment',JSON.stringify(rentalModel)]);
         this.toastrService.info('Ödeme sayfasına yönlendiriliyorsunuz.','Ödeme İşlemleri')
-        //this.rentalService.add(rentalModel).subscribe(response=>{
-       // this.toastrService.success("Başarılı","Kiralama İşlemi Tamamlandı")}
-      
+        
         
       
       }
