@@ -59,6 +59,8 @@
 ![Adsız](https://user-images.githubusercontent.com/41199747/114319653-0679cd00-9b1b-11eb-993b-0f3aa8eb8470.png)
 
 --->Araç güncelleme için herhangi bir aracın güncelleme butonuna tıklıyoruz.
+
+
 ![Adsız](https://user-images.githubusercontent.com/41199747/114319975-6f157980-9b1c-11eb-9fce-8433c33d6f1c.png)
 
 --->Güncelleme ekranında aracın mevcut olan bilgileri otomatik olarak geliyor. Güncellemek istediklerimizi değiştirip güncelleme butonuna tıklıyoruz ve aracımız başarı ile güncellenmiş oluyor.
