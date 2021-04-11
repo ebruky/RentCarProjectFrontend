@@ -24,6 +24,16 @@
 --->Renk isminde  aratılan harfler mevcutsa renk ismine göre listeleme işlemi yapılıyor.
 ![Adsız](https://user-images.githubusercontent.com/41199747/114318200-a849eb80-9b14-11eb-9dc0-22bae4124295.png)
 
+--->Araç detayına tıklayınca araba eğer kiralanmış ise aşağıdaki gibi "Araç Kirada" olarak görünür.
+![Adsız](https://user-images.githubusercontent.com/41199747/114318431-8c931500-9b15-11eb-9bbd-ad7c656d4076.png)
+
+--->Araç kirada değil ise kiralamak için tarih ve müşteri seçimi yapılabilen bir arayüz karşımıza çıkar.
+![Adsız](https://user-images.githubusercontent.com/41199747/114318510-f9a6aa80-9b15-11eb-8d46-b552eee94c04.png)
+
+--->Forma, müşteriler veritabanından çekiliyor ve istenilen müşteri seçiliyor. Seçilen tarihlerin gün olarak farkı alınıp aracın günlük fiyatı ile çarpılıyor, bu hesaplamadan sonra ödeme sayfasına yönlendiriliyor.
+![Adsız](https://user-images.githubusercontent.com/41199747/114318673-cfa1b800-9b16-11eb-9d3d-aaf9bb167c19.png)
+
+
 
 
 
