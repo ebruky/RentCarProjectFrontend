@@ -30,6 +30,8 @@ import { ColorUpdateComponent } from 'src/components/color-update/color-update.c
 import { LoginComponent } from 'src/components/login/login.component';
 import { RegisterComponent } from 'src/components/register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { UserComponent } from 'src/components/user/user.component';
+
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     BrandUpdateComponent,
     ColorUpdateComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserComponent
 ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ReactiveFormsModule
     ,
     ToastrModule.forRoot({positionClass:"toast-bottom-right"}),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
   bootstrap: [AppComponent]

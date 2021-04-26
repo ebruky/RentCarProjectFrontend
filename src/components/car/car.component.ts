@@ -22,11 +22,10 @@ export class CarComponent implements OnInit {
   dataLoaded:boolean=false;
   carModel:CarModel
   carText: string = '';
- currentBrand: Brand={brandId:1007,brandName:""}
- currentColor: Color={colorId:4002,colorName:""}
-//  currentBrand: Brand
-//  currentColor: Color
+ 
   
+brandId: number;
+colorId: number;
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
@@ -100,16 +99,5 @@ export class CarComponent implements OnInit {
       this.cars = response.data;
     });
   }
-  setCurrentBrand(brand: Brand) {
-    this.currentBrand = brand;
-    return true;
-   
-  
-  }
-
-  setCurrentColor(color: Color) {
-    this.currentColor = color;
-    return true;
-  
-  }
+ 
 }

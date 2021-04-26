@@ -1,0 +1,46 @@
+<body class="text-center">
+    <main class="form-signin">
+      <form [formGroup]="userUpdateForm">
+        
+        <h1 class="h3 mb-3 fw-normal">Güncelleme</h1>
+        <div class="form-floating">
+            <div class="form-group">
+              <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder="{{firstname}}"/>
+            </div></div>
+
+            <div class="form-floating">
+                <div class="form-group">
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control" placeholder={{lastname}} />
+                </div></div>
+  
+        <div class="form-floating">
+          <input
+          formControlName="email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="{{email}}"
+          />
+          <label for="floatingInput">{{email}}</label>
+        </div>
+        <div class="form-floating">
+          <input
+          formControlName="password"
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Şifre</label>
+        </div>
+  
+        
+        <button class="w-100 btn btn-lg btn-primary"  (click)="update()">
+         Güncelle
+        </button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
+      </form>
+    </main>
+  </body>
+
+

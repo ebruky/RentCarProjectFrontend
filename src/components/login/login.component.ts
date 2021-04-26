@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { TokenModel } from 'src/models/tokenModel';
 import { AuthService } from 'src/services/auth.service';
+import { LocalStorageeService } from 'src/services/local-storagee.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ import { AuthService } from 'src/services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
-    private authService: AuthService,
+    private authService: AuthService,private localStoragee:LocalStorageeService,
     private toastrService: ToastrService,private router:Router) { }
 
   ngOnInit(): void {
@@ -29,14 +31,18 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       let loginModel = Object.assign({}, this.loginForm.value);
       this.authService.login(loginModel).subscribe((response) => {
+        console.log(response)
         this.toastrService.info(response.message);
-
-        localStorage.setItem('token', response.data.token);
+        this.localStoragee.AddLocalStorage(response.data)
+        
         this.router.navigate(["cars"]);
+
       },responseError=>{
        // console.log(responseError)
        this.toastrService.error(responseError.error);
       });
     }
   }
+  
+
 }

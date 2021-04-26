@@ -32,14 +32,15 @@ export class CarDetailComponent implements OnInit {
   selectedFile: ImageSnippet;
   description: string;
   carControl=false
+  index=0;
   url: string = 'https://localhost:44307';
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['carId']) {
+      if (params['carId'], params['carId']) {
         
         this.getCarsDetailByCarId(params['carId']);
-        this.checkCar(params['carId']);
+        this.checkCar(params['carId']) ;
         
       }
     });

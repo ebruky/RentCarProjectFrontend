@@ -31,13 +31,14 @@ export class RegisterComponent implements OnInit {
       let registerModel = Object.assign({}, this.registerForm.value);
       this.authService.register(registerModel).subscribe((response) => {
         this.toastrService.info(response.message);
-
         localStorage.setItem('token', response.data.token);
         this.router.navigate(["login"]);
       },responseError=>{
-       // console.log(responseError)
        this.toastrService.error(responseError.error);
       });
     }
+    else{
+      this.toastrService.error("Dikkat","Lütfen Tüm Alanları Doldurun, Formunuz Eksik")
+          }
   }
 }

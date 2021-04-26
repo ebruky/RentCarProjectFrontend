@@ -13,9 +13,10 @@ import { LoginComponent } from 'src/components/login/login.component';
 import { PaymentComponent } from 'src/components/payment/payment.component';
 import { RegisterComponent } from 'src/components/register/register.component';
 import { RentalComponent } from 'src/components/rental/rental.component';
+import { UserComponent } from 'src/components/user/user.component';
 import { LoginGuard } from './guards/login.guard';
 
-const routes: Routes = [{path:"",pathMatch:"full", component:LoginComponent},
+const routes: Routes = [{path:"",pathMatch:"full", component:CarComponent},
 {path:"cars", component:CarComponent},
 {path:"login", component:LoginComponent},
 {path:"register", component:RegisterComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [{path:"",pathMatch:"full", component:LoginComponent},
 {path:"payment/:rental",component:PaymentComponent},
 {path:"brand-add",component:BrandAddComponent},
 {path:"color-add",component:ColorAddComponent},
+{path:"user/:userId",component:UserComponent},
 {path:"car-add",component:CarAddComponent,canActivate:[LoginGuard]},
 ];
 

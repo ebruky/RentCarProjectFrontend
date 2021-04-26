@@ -1,5 +1,5 @@
 <div *ngIf="dataLoaded == true" class="row">
-  <div class="container col-md-10">
+  <!-- <div class="container col-md-10">
     <div class="row">
       <div
         *ngFor="let carImage of car.carImages"
@@ -9,24 +9,67 @@
         <img [src]="url + carImage.imagePath" class="card-img-top" alt="..." />
       </div>
     </div>
-  </div>
-
-  <div class="container col-md-10">
-    <div class="card-body">
-      <h5 class="card-title">{{ car.description }}</h5>
-      <p class="card-text">Marka : {{ car.brandName }}</p>
-      <p class="card-text">Günlük Fiyat : {{ car.dailyPrice }}</p>
-      <p class="card-text">Renk : {{ car.colorName }}</p>
-
-      <button
-        *ngIf="carControl == false"
-        type="button"
-        class="btn btn-secondary btn-lg"
-        disabled
+  </div> -->
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div
+        *ngFor="let carImage of car.carImages; let i = index"
+        class="carousel-item {{ i == 0 ? 'active' : null }}"
       >
-        Araç Kirada
-      </button>
+        <img [src]="url + carImage.imagePath" class="d-block w-100" alt="..." />
+      </div>
     </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
+
+ 
+    <table>
+      <thead> <tr>
+        <th class="text-center">Model</th>
+        <th class="text-center">Marka</th>
+        <th class="text-center">Günlük Fiyat</th>
+        <th class="text-center">Renk</th>
+      </tr></thead>
+     
+
+    
+      <tr>
+        <td class="text-center">{{ car.description }}</td>
+        <td class="text-center">{{ car.brandName }}</td>
+        <td class="text-center">{{ car.dailyPrice }}</td>
+        <td class="text-center">{{ car.colorName }}</td>
+      </tr>
+
+    </table>
+
+    <button
+    *ngIf="carControl == false"
+    type="button"
+    class="btn btn-secondary btn-lg"
+    disabled
+  >
+    Araç Kirada
+  </button>
   <app-rental-add *ngIf="carControl == true" [car]="car"></app-rental-add>
 </div>
