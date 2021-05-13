@@ -58,7 +58,9 @@ this.getColors();
     this.carService.add(carModel).subscribe(response=>{
       
       this.toastrService.success("Başarılı",response.message)},responseError=>{
+        console.log(responseError)
       if(responseError.error.Errors.length>0){
+       
        for (let i = 0; i < responseError.error.Errors.length; i++) {
         this.toastrService.error(responseError.error.Errors[i].ErrorMessage)}
          

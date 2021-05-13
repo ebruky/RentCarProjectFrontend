@@ -20,7 +20,6 @@ cardNumber:string;
 expirationDate:string;
 cardCvv:string;
 moneyInTheCard:number;
-
 totalPrice:number;
 carId:number;
 

@@ -48,7 +48,9 @@ getCustomers(){
   });
 
 }
-    add() {
+  
+
+add() {
       if(this.rentalAddForm.valid){
   
         let rentalModel = Object.assign({}, this.rentalAddForm.value);
